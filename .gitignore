@@ -10,3 +10,6 @@
 commands.txt
 .env
 archives
+.terraform.lock.hcl
+.env*
+*.swp
