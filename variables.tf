@@ -13,3 +13,4 @@ variable "aws_region" {}
 variable "aws_dns_name" {}
 variable "clflare_dns" {}
 variable "clflare_sub" {}
+variable "aws_s3_backend_bucket" { default = "sunny-tf"}

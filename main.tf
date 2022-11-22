@@ -1,3 +1,16 @@
+terraform {
+  backend "s3" {
+   # bucket = "${var.aws_s3_backend_bucket}"
+    bucket = "sunny-tf"
+    key    = "terraform/dev/terraform.tfstate"
+    #region = "us-west-2"
+    dynamodb_table = "terraform-state-locking"
+    encrypt = true
+  }
+}
+
+
+
 data "cloudflare_zone" "this" {
    name = "${var.clflare_dns}"
 }
