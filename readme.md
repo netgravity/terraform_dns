@@ -31,3 +31,13 @@ terraform {
   }
 }
 ```
+# Use tfstate for every project
+
+Think (yet to test) no need for backend dir once we have created for the first time, unless we need to chnage s3 bucket name.permissions or dynamo db stuff.
+Would only need to change the key name in main.tf file `key = "terraform/dev/terraform.tfstate"` , change the key to unique project name for example
+so that we have a tfstate file for every project
+
+## DNS
+registered a domain kiwithon.com in cloudflare . once domian is created to create `red.kiwithon.com` in aws route 53, we can run the terraform apply cmmand mentioned above.This creates a zone in route53 with red.... and the output of the nameserver entries are then used to create dns NS records in cloudflare dns records section.
+terraform will create new red.kiwithon.com records in cloudflare oitning ns records to the aws nameservers which were outputted by terraform script when route 53 zone was created.
+

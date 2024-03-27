@@ -1,7 +1,8 @@
 terraform {
   backend "s3" {
    # bucket = "${var.aws_s3_backend_bucket}"
-    bucket = "sunny-tf"
+    #bucket = "sunny-tf"
+    bucket = "sunny-tfstate"
     key    = "terraform/dev/terraform.tfstate"
     #region = "us-west-2"
     dynamodb_table = "terraform-state-locking"
